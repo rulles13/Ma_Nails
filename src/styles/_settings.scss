@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Baloo2";
+    src: url(../assets/fonts/Baloo2-VariableFont_wght.ttf);
+  }
+  
+  $Baloo2: "Baloo2", sans-serif;
+  
+  $cherry: #E35E74;
+  $light-Pink: #FFD3D5;
+  $dark-Pink: #C09690;
+  $peach: #FFEBE4;
+  $dark-Blue: #282c34;
+  $white: rgb(243, 243, 243);
+  
+  @mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: $white;
+    font-family: $Baloo2;
+    // @include verticalCenter;
+  }
+  li {
+    list-style-type: none;
+  }
