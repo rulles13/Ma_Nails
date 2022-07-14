@@ -8,6 +8,7 @@
   $cherry: #E35E74;
   $light-Pink: #FFD3D5;
   $dark-Pink: #C09690;
+  $brown: #8D524B;
   $peach: #FFEBE4;
   $dark-Blue: #282c34;
   $white: rgb(243, 243, 243);
@@ -25,7 +26,7 @@
   }
   
   body {
-    background: $light-Pink;
+    background: white;
     font-family: $Baloo2;
     // @include verticalCenter;
   }

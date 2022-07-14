@@ -1,4 +1,15 @@
 .hero {
-    background-color: aquamarine;
-    text-align: center;
+    background: $light-Pink;
+    background: linear-gradient(180deg, $light-Pink 0%, $dark-Pink 100%);
+}
+
+.logo-hero{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: 150px;
+    }
 }
