@@ -1,0 +1,11 @@
+.presentation{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    p{
+        color: $brown;
+        
+        padding: 3rem;
+        font-size: 1.2rem;
+    }
+}

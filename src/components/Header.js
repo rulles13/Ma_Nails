@@ -9,7 +9,7 @@ export default function Header() {
                 <li>hello</li>
             </Menu>
             <div className="logo-hero">
-                <img src="./img/logoMaNails_brown.svg" alt="logo"/>
+                <img src="./img/logoMaNails_brown.svg" alt="logo MA NAILS"/>
             </div>
             
         </div>
