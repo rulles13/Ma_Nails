@@ -13,23 +13,23 @@ const Galery = () => {
         },
         {
           image: "./img/galerie/manails_3.jpg",
-          caption: "Mix rose"
+          caption: "Baobab"
         },
         {
           image: "./img/galerie/manails_4.jpg",
-          caption: "Mix rose"
+          caption: "Inden Tico"
         },
         {
           image: "./img/galerie/manails_5.jpg",
-          caption: "Mix rose"
+          caption: "Natural pink"
         },
         {
           image: "./img/galerie/manails_6.jpg",
-          caption: "Mix rose"
+          caption: "Baobab"
         },
         {
           image: "./img/galerie/manails_7.jpg",
-          caption: "Mix rose"
+          caption: "French Manucure"
         },
       ];
     
@@ -42,7 +42,7 @@ const Galery = () => {
         fontWeight: 'bold',
       }
       return (
-        <div className="App">
+        <div className="App" id="realisations">
           <div style={{ textAlign: "center" }}>
             <h2>Realisations</h2>
             <div style={{
@@ -69,7 +69,7 @@ const Galery = () => {
                 style={{
                   textAlign: "center",
                   maxWidth: "850px",
-                  maxHeight: "500px",
+                  maxHeight: "650px",
                   margin: "40px auto",
                 }}
               />

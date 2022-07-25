@@ -4,8 +4,12 @@ const Tarif = () => {
 
     const prestations = [
         {
-            "soin": "Vernis semi permanent",
-            "prix": "25 €"
+            "soin": "Ongles en gel",
+            "prix": "20 €"
+        },
+        {
+            "soin": "Vernis semi-permanent",
+            "prix": "10 €"
         },
         {
             "soin": "Retouche",
@@ -15,13 +19,21 @@ const Tarif = () => {
             "soin": "Déposse",
             "prix": "10 €"
         },
+        {
+            "soin": "Déplacement -10 km",
+            "prix": "5 €"
+        },
+        {
+            "soin": "Déplacement -20 km",
+            "prix": "10 €"
+        }
     ]
 
     return (
-        <div className='tarif'>
+        <div id='tarif'>
             <button className='btn-red'> Tarif </button>
         {prestations.map((presta) => (
-            <li>{presta.soin}</li>
+            <li>{presta.soin} : {presta.prix}</li>
         ))}
         </div>
     )

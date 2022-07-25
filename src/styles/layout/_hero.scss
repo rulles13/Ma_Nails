@@ -1,7 +1,12 @@
-.hero {
+#hero {
     position: relative;
     background: $light-Pink;
     background: linear-gradient(180deg, $light-Pink 0%, $dark-Pink 100%);
+    a{
+        color: $cherry;
+        text-decoration: none;
+        font-size: 2rem;
+    }
 }
 
 .logo-hero{
