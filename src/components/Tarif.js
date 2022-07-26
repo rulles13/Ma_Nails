@@ -31,9 +31,9 @@ const Tarif = () => {
 
     return (
         <div id='tarif'>
-            <button className='btn-red'> Tarif </button>
-        {prestations.map((presta) => (
-            <li>{presta.soin} : {presta.prix}</li>
+            <h2>Tarif</h2>
+        {prestations.map((presta, index) => (
+            <li key={index}>{presta.soin} : {presta.prix}</li>
         ))}
         </div>
     )
