@@ -1,48 +1,45 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useRef } from 'react';
+import emailjs, { init } from '@emailjs/browser';
+init(process.env.ID)
 
 const Contact = () => {
+    const form = useRef();
   
-  const [form, setForm] = useState({
-    name: '',
-    email:'',
-    message:''
-
-  })
-
-  const onChange = (e) => {
-    const {value, name} = e.target;
-    setForm((state) => ({
-      ...state,
-      [name]: value
-    }))
-  }
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(form);
-  }
-
-  return (
-    <div id="contact">
-      <h2>CONTACT</h2>
-    <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="name">Nom</label>
-        <input onChange={onChange} type="text" name="name" default="Jane Doe" required tabIndex="1"/>
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      const formMessage = document.querySelector(".form-message");
+  
+      emailjs.sendForm('service_f4o6b7e', 'template_nllk0ta', form.current, process.env.REACT_APP_ID)
+        .then((result) => {
+          //   console.log(result.text);
+            form.current.reset();
+            formMessage.innerHTML = "<p class='success'> Message envoyé ! </p>";
+            setTimeout(() => {formMessage.innerHTML=""}, 5000)
+        }, (error) => {
+          //   console.log(error.text);
+            formMessage.innerHTML = "<p class='error'> Une erreur s'est produite, veuillez réessayer. </p>";
+            setTimeout(() => {formMessage.innerHTML=""}, 5000)
+        });
+    };
+  
+    return (
+        <div id="contact">
+          <h2>contactez-moi</h2>
+          <form ref={form} onSubmit={sendEmail} >
+              <label>nom</label>
+              <input type="text" name="name" required id="name"/>
+              <label>Email</label>
+              <input type="email" name="email" required id="email"/>
+              <label>Message</label>
+              <textarea name="message" id="mess"/>
+              <button type="submit" value="Send" className="btn-red">envoyer</button>
+          </form>
+          <div className="form-message">
+  
+          </div>
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input onChange={onChange}  type="email" name="email" required tabIndex="2"/>
-      </div>
-      <div>
-        <label htmlFor="message">Message</label>
-        <textarea onChange={onChange} name="message" required rows="5" tabIndex="3"/>
-      </div>
-      <button type="submit" className='btn-red'>Envoyer</button>
-    </form>
-    </div>
-  )
-}
+    );
+  };
 
-export default Contact
+export default Contact;
